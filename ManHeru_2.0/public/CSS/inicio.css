@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    color: #1a1a1a;
+}
+
+.navbar {
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto; 
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.logo .nombre {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8b0000;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    background-color: #f2f2f2;
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+    position: relative; 
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #8b0000;
+}
+
+.contenido {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100vh - 100px);
+    padding: 0 60px;
+}
+
+.texto-principal {
+    max-width: 600px;
+}
+
+.texto-principal h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.texto-principal p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn-catalogo {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-catalogo:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Icono del carrito en el header */
+.carrito-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
