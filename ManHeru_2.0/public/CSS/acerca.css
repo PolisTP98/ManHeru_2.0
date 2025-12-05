@@ -1,0 +1,258 @@
+/* Estilos para la página Acerca de */
+
+.acerca-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Hero Section */
+.acerca-hero {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border-left: 5px solid #8b0000;
+}
+
+.acerca-hero h1 {
+    font-size: 3.5rem;
+    color: #8b0000;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.acerca-subtitulo {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Logros Section */
+.logros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.logro-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #8b0000;
+}
+
+.logro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logro-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.logro-card h3 {
+    color: #8b0000;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.logro-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Visión y Misión */
+.vision-mision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.vmv-card {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    border-left: 5px solid #8b0000;
+}
+
+.vmv-card h2 {
+    color: #8b0000;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vmv-icon {
+    font-size: 1.5rem;
+}
+
+.vmv-card p {
+    color: #333;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Valores */
+.valores {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    border: 2px solid #e9ecef;
+}
+
+.valores h2 {
+    color: #8b0000;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.valores-icon {
+    font-size: 2rem;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.valor-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-5px);
+}
+
+.valor-item h3 {
+    color: #8b0000;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.valor-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Call to Action */
+.cta-section {
+    text-align: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn-volver {
+    display: inline-block;
+    padding: 15px 40px;
+    background: white;
+    color: #8b0000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.btn-volver:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .acerca-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .acerca-subtitulo {
+        font-size: 1.1rem;
+    }
+    
+    .vision-mision {
+        grid-template-columns: 1fr;
+    }
+    
+    .vmv-card {
+        padding: 25px;
+    }
+    
+    .valores {
+        padding: 30px 20px;
+    }
+    
+    .valores h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section {
+        padding: 40px 20px;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .acerca-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .logros {
+        grid-template-columns: 1fr;
+    }
+    
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-volver {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}

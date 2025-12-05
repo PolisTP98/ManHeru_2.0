@@ -29,9 +29,9 @@
 
         <nav class="menu">
             <a href="#acerca-section">Acerca de</a>
-            <a href="{{ route('productos.index') }}">Productos</a>
-            <a href="{{ route('cotizaciones') }}">Cotizaciones</a>
-            <a href="{{ route('contacto') }}">Contacto</a>
+            <a href="#">Productos</a>
+            <a href="#">Cotizaciones</a>
+            <a href="#">Contacto</a>
 
             @if(session()->has('usuario'))
                 @if(session('usuario')->ID_Rol == 1)
