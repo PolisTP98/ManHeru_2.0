@@ -71,7 +71,11 @@ Route::middleware(['auth.session'])->group(function () {
 // ============================================================================
 // CRUD DE USUARIOS (SOLO ADMINISTRADORES)
 // ============================================================================
-Route::resource('usuarios', UsuarioController::class)->except(['show']);
+Route::middleware(['auth.session', 'admin'])->group(function () {
+    Route::resource('usuarios', UsuarioController::class)->except(['show']);
+    Route::post('/usuarios/{id}/toggle-status', [UsuarioController::class, 'toggleStatus'])
+        ->name('usuarios.toggle-status');
+});
 
 // ============================================================================
 // RUTAS PÚBLICAS DE PRODUCTOS
