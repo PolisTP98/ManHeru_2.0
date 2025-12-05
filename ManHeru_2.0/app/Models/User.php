@@ -13,10 +13,10 @@ class User extends Authenticatable
     // Configuraciones específicas para SQL Server y tu estructura
     protected $table = 'Usuarios';
     protected $primaryKey = 'ID_Usuario';
-    public $timestamps = false; // Si no tienes created_at y updated_at
+    public $timestamps = true; // Cambiado a true para usar created_at y updated_at
 
     /**
-     * Atributos que se pueden asignar masivamente (necesarios para el registro).
+     * Atributos que se pueden asignar masivamente
      */
     protected $fillable = [
         'Nombre',
@@ -29,24 +29,50 @@ class User extends Authenticatable
     ];
 
     /**
-     * Atributos que deben ocultarse para la serialización (seguridad).
+     * Atributos que deben ocultarse para la serialización
      */
     protected $hidden = [
         'Contrasena',
+        'remember_token',
     ];
 
     /**
-     * Sobreescribir el método para que el login sepa dónde buscar la contraseña
-     * y el email, utilizando los nombres de tus columnas (Contrasena y Gmail).
+     * Atributos que deben ser casteados
+     */
+    protected $casts = [
+        'Estatus' => 'integer',
+        'ID_Rol' => 'integer',
+    ];
+
+    /**
+     * Sobreescribir el método para que Laravel sepa dónde buscar la contraseña
      */
     public function getAuthPassword()
     {
         return $this->Contrasena;
     }
     
-    // Aunque no uses el sistema de Auth completo de Laravel, esto ayuda a mantener la convención
+    /**
+     * Método para obtener el email
+     */
     public function getEmailForPasswordReset()
     {
         return $this->Gmail;
+    }
+
+    /**
+     * Relación con Rol (opcional, si tienes tabla de roles)
+     */
+    public function rol()
+    {
+        return $this->belongsTo(Rol::class, 'ID_Rol', 'ID_Rol');
+    }
+
+    /**
+     * Relación con Dirección (opcional)
+     */
+    public function direccion()
+    {
+        return $this->belongsTo(Direccion::class, 'ID_Direccion', 'ID_Direccion');
     }
 }
