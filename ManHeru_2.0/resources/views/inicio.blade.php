@@ -30,7 +30,7 @@
         <nav class="menu">
             <a href="#acerca-section">Acerca de</a>
             <a href="{{ route('productos') }}">Productos</a>
-            <a href="#">Cotizaciones</a>
+            <a href="{{ route('cotizaciones') }}">Cotizaciones</a>
             <a href="#">Contacto</a>
 
             @if(session()->has('usuario'))
