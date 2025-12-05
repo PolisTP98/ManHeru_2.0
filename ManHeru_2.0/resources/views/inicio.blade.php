@@ -31,7 +31,7 @@
             <a href="#acerca-section">Acerca de</a>
             <a href="{{ route('productos') }}">Productos</a>
             <a href="{{ route('cotizaciones') }}">Cotizaciones</a>
-            <a href="#">Contacto</a>
+            <a href="{{ route('contacto') }}">Contacto</a>
 
             @if(session()->has('usuario'))
                 @if(session('usuario')->ID_Rol == 1)
