@@ -2,47 +2,51 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    // Configuraciones específicas para SQL Server y tu estructura
+    protected $table = 'Usuarios';
+    protected $primaryKey = 'ID_Usuario';
+    public $timestamps = false; // Si no tienes created_at y updated_at
+
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
+     * Atributos que se pueden asignar masivamente (necesarios para el registro).
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'Nombre',
+        'Gmail',
+        'Contrasena',
+        'Telefono',
+        'Estatus',
+        'ID_Rol',
+        'ID_Direccion',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
+     * Atributos que deben ocultarse para la serialización (seguridad).
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'Contrasena',
     ];
 
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * Sobreescribir el método para que el login sepa dónde buscar la contraseña
+     * y el email, utilizando los nombres de tus columnas (Contrasena y Gmail).
      */
-    protected function casts(): array
+    public function getAuthPassword()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->Contrasena;
+    }
+    
+    // Aunque no uses el sistema de Auth completo de Laravel, esto ayuda a mantener la convención
+    public function getEmailForPasswordReset()
+    {
+        return $this->Gmail;
     }
 }
