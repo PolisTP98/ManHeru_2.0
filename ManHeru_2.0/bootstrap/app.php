@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // Registrar middlewares de ruta
         $middleware->alias([
-            'auth.session' => \App\Http\Middleware\AuthSessionMiddleware::class,
+            'auth.session' => \App\Http\Middleware\CheckSession::class,
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
     })

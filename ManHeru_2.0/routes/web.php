@@ -21,9 +21,9 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     if (session()->has('usuario')) {
         $usuario = session('usuario');
-        return view('Inicio', compact('usuario'));
+        return view('inicio', compact('usuario'));
     }
-    return view('Inicio');
+    return view('inicio');
 })->name('inicio');
 
 // ============================================================================
@@ -60,12 +60,14 @@ Route::middleware(['auth.session'])->group(function () {
     Route::post('/favoritos/eliminar', [FavoritoController::class, 'eliminar'])->name('favoritos.eliminar');
     
     // Gestión de productos (solo administradores)
-    Route::get('/productos/crear', [ProductoController::class, 'create'])->name('productos.create');
-    Route::post('/productos/store', [ProductoController::class, 'store'])->name('productos.store');
-    Route::get('/productos/{id}/editar', [ProductoController::class, 'edit'])->name('productos.edit');
-    Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
-    Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
-    Route::post('/productos/{id}/toggle-disponible', [ProductoController::class, 'toggleDisponible'])->name('productos.toggle');
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/productos/crear', [ProductoController::class, 'create'])->name('productos.create');
+        Route::post('/productos/store', [ProductoController::class, 'store'])->name('productos.store');
+        Route::get('/productos/{id}/editar', [ProductoController::class, 'edit'])->name('productos.edit');
+        Route::put('/productos/{id}', [ProductoController::class, 'update'])->name('productos.update');
+        Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');
+        Route::post('/productos/{id}/toggle-disponible', [ProductoController::class, 'toggleDisponible'])->name('productos.toggle');
+    });
 });
 
 // ============================================================================
@@ -112,10 +114,6 @@ Route::post('/contacto/enviar', function (Request $request) {
         'prioridad' => 'required|in:baja,media,alta',
         'mensaje' => 'required|string|min:10|max:1000'
     ]);
-    
-    // Aquí iría la lógica para enviar el correo al encargado de distribución
-    // Por ejemplo:
-    // Mail::to('distribucion@manheru.com')->send(new ContactoMensaje($validated));
     
     // Por ahora, solo guardamos en sesión para mostrar
     $mensajes = session('contacto_mensajes', []);
