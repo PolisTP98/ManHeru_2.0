@@ -13,7 +13,7 @@ class User extends Authenticatable
     // Configuraciones específicas para SQL Server y tu estructura
     protected $table = 'Usuarios';
     protected $primaryKey = 'ID_Usuario';
-    public $timestamps = true; // Cambiado a true para usar created_at y updated_at
+    public $timestamps = true;
 
     /**
      * Atributos que se pueden asignar masivamente
@@ -45,13 +45,45 @@ class User extends Authenticatable
     ];
 
     /**
-     * Sobreescribir el método para que Laravel sepa dónde buscar la contraseña
+     * Get the name of the unique identifier for the user.
+     *
+     * @return string
+     */
+    public function getAuthIdentifierName()
+    {
+        return 'ID_Usuario';
+    }
+
+    /**
+     * Get the unique identifier for the user.
+     *
+     * @return mixed
+     */
+    public function getAuthIdentifier()
+    {
+        return $this->ID_Usuario;
+    }
+
+    /**
+     * Get the password for the user.
+     *
+     * @return string
      */
     public function getAuthPassword()
     {
         return $this->Contrasena;
     }
-    
+
+    /**
+     * Get the column name for the "remember me" token.
+     *
+     * @return string
+     */
+    public function getRememberTokenName()
+    {
+        return 'remember_token';
+    }
+
     /**
      * Método para obtener el email
      */
