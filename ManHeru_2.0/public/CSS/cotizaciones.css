@@ -1,0 +1,280 @@
+/* Estilos para la página de cotizaciones */
+.cotizaciones-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 20px;
+}
+
+/* Estilos para la sección de agregar productos */
+.agregar-producto {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-titulo {
+    font-size: 1.5rem;
+    color: #8b0000;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #8b0000;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+.btn-agregar {
+    background-color: #8b0000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-agregar:hover {
+    background-color: #a00000;
+}
+
+/* Estilos para la tabla de cotización */
+.tabla-cotizacion {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+    overflow-x: auto;
+}
+
+.tabla-cotizacion table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-cotizacion th {
+    background-color: #8b0000;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.tabla-cotizacion td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabla-cotizacion tr:hover {
+    background-color: #f9f9f9;
+}
+
+.cantidad-input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para el resumen */
+.resumen-cotizacion {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.resumen-titulo {
+    font-size: 1.5rem;
+    color: #8b0000;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8b0000;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.total-item:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #8b0000;
+}
+
+.btn-generar {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-generar:hover {
+    background-color: #218838;
+}
+
+.btn-limpiar {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-limpiar:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje cuando no hay productos */
+.sin-productos {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Estilos para los productos predefinidos */
+.productos-predefinidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.producto-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    transition: transform 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.producto-nombre {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.producto-precio {
+    color: #8b0000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-seleccionar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-seleccionar:hover {
+    background-color: #0069d9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cotizaciones-container {
+        padding: 20px 15px;
+    }
+    
+    .agregar-producto,
+    .tabla-cotizacion,
+    .resumen-cotizacion {
+        padding: 20px;
+    }
+    
+    .productos-predefinidos {
+        grid-template-columns: 1fr;
+    }
+}
